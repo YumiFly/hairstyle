@@ -2,6 +2,6 @@
   "name": "hairstyle",
   "compatibility_date": "2025-1-9",
   "assets": {
-    // "directory": "./dist"
+    "directory": "./dist"
   }
 }
