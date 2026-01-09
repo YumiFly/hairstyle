@@ -13,7 +13,7 @@ export interface HairStylingResponse {
   processingTime?: number
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_HAIR_STYLING_API_URL || "/api/hair-styling"
+const API_BASE_URL = process.env.NEXT_PUBLIC_HAIR_STYLING_API_URL!
 
 export async function generateHairStyle(request: HairStylingRequest): Promise<HairStylingResponse> {
   try {
@@ -47,11 +47,11 @@ export async function generateHairStyle(request: HairStylingRequest): Promise<Ha
   }
 }
 
-export async function checkServiceHealth(): Promise<boolean> {
-  try {
-    const response = await fetch(`${API_BASE_URL}/health`)
-    return response.ok
-  } catch {
-    return false
-  }
-}
+// export async function checkServiceHealth(): Promise<boolean> {
+//   try {
+//     const response = await fetch(`${API_BASE_URL}/health`, { cache: "no-store" })
+//     return response.ok
+//   } catch {
+//     return false
+//   }
+// }
